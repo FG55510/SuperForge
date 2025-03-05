@@ -11,20 +11,11 @@ public class PlayerLife : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameManager.INSTANCE.PlayerDefend.AddListener(EstacomEscudo);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            Escudo = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse1))
-        {
-            Escudo = false;
-        }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -45,5 +36,15 @@ public class PlayerLife : MonoBehaviour
             vidaatual = 0;
             Debug.Log("inimigo morreu");
         }
+    }
+
+    private void EstacomEscudo (bool estado)
+    {
+        Escudo = estado;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.INSTANCE.PlayerAttack.RemoveListener(EstacomEscudo);
     }
 }

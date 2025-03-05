@@ -3,9 +3,7 @@ using UnityEngine;
 public class Katana : MonoBehaviour
 {
     private Collider HitBox;
-    [SerializeField] private float Duracaodoataque;
-    [SerializeField] private float timer;
-    [SerializeField] private bool ataque;
+    
     [SerializeField] private int danoplayer;
 
 
@@ -15,30 +13,15 @@ public class Katana : MonoBehaviour
         GameManager.INSTANCE.PlayerAttack.AddListener(HitBoxAtivada);
         HitBox = GetComponent<Collider>();
         HitBox.enabled = false;
-        timer = Duracaodoataque;
-        ataque = false;
-    }
 
-    void Update()
-    {
-        if (ataque)
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0){
-                HitBox.enabled = false;
-                timer = Duracaodoataque;
-                ataque = false;
-                Debug.Log("Fim de Ataque");
-            }
-        }
     }
 
 
-    private void HitBoxAtivada()
+
+
+    private void HitBoxAtivada(bool estado)
     {
-        HitBox.enabled = true;
-        ataque = true;
-        Debug.Log("Ataque");
+        HitBox.enabled = estado;
     }
 
     private void OnTriggerEnter(Collider other)
