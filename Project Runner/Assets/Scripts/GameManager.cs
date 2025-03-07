@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
 
     public UnityEvent<bool> PlayerDefend;
+    private bool playerdefendendo;
 
     public UnityEvent<bool> PlayerAttack;
     [SerializeField] private float Duracaodoataque;
@@ -25,10 +26,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         timer = Duracaodoataque;
+        timerativo = false;
+        playerdefendendo = false;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !timerativo)
         {
             PlayerAttack.Invoke(true);
             timerativo = true;
@@ -47,15 +50,17 @@ public class GameManager : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !playerdefendendo)
         {
             Debug.Log("Defesa");
             PlayerDefend.Invoke(true);
+            playerdefendendo = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        else if (Input.GetKeyUp(KeyCode.Mouse1) && playerdefendendo)
         {
             Debug.Log("DefesaStop");
             PlayerDefend.Invoke(false);
+            playerdefendendo = false;
         }
     }
 }
