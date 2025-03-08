@@ -8,7 +8,7 @@ public class PlayerActionsAnimated : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         GameManager.INSTANCE.PlayerAttack.AddListener(AttackAnimation);
-        GameManager.INSTANCE.PlayerAttack.AddListener(DefenceAnimation);
+        GameManager.INSTANCE.PlayerDefend.AddListener(DefenceAnimation);
     }
 
     // Update is called once per frame
