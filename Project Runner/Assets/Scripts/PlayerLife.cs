@@ -12,6 +12,7 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         GameManager.INSTANCE.PlayerDefend.AddListener(EstacomEscudo);
+        GameManager.INSTANCE.PlayerTomaDano.AddListener(Tiravida);
     }
 
     void Update()
@@ -29,12 +30,14 @@ public class PlayerLife : MonoBehaviour
         if (Escudo)
         {
             dano = dano - Protecaodoescudo;
+
         }
         vidaatual = vidaatual - dano;
+        Debug.Log("vida Player: " + vidaatual + "/" + vidamax);
         if (vidaatual <= 0)
         {
             vidaatual = 0;
-            Debug.Log("inimigo morreu");
+            
         }
     }
 
@@ -46,5 +49,6 @@ public class PlayerLife : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.INSTANCE.PlayerAttack.RemoveListener(EstacomEscudo);
+       // GameManager.INSTANCE.PlayerAttack.RemoveListener(Tiravida);
     }
 }

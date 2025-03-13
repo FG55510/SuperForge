@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public UnityEvent<int> PlayerTomaDano;
 
     public UnityEvent<bool> PlayerDefend;
     private bool playerdefendendo;
