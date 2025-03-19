@@ -15,7 +15,7 @@ public class ArmaInimigo : MonoBehaviour
 
     public float timer;
 
-    public int offset;
+    [SerializeField] private Transform arma;
 
     public float distancia;
 
@@ -33,14 +33,18 @@ void Start()
     {
         Debug.Log("Test");
         timer -= Time.deltaTime;
+
+        Vector3 Direction = (player.position - transform.position).normalized;
+        Quaternion rotation = Quaternion.LookRotation(Direction);
+        transform.rotation = rotation;
         if (timer <= 0)
         {
-            Vector3 Direction = (player.position - transform.position + Vector3.up * offset).normalized;
+            
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, Direction, out hit, 1000f, LayerPlayer))
+            if (Physics.Raycast(arma.position, Direction, out hit, 1000f, LayerPlayer))
             {
-                Debug.DrawRay(transform.position, Direction * 1000f, Color.red);
+                Debug.DrawRay(arma.position, Direction * 1000f, Color.red);
                   GameManager.INSTANCE.PlayerTomaDano.Invoke(dano);
                 anim.SetTrigger("Shoot");
 

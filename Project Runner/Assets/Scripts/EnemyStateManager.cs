@@ -36,6 +36,8 @@ public class EnemyStateManager : MonoBehaviour
     void Update()
     {
         distanciadoplayer = Vector3.Distance(player.position, transform.position);
+
+        
         if(distanciadoplayer > moveseekplayer.rangeatual && estadoatual != EstadosdosInimigos.GoingtoPlayer)
         {
             MudarEstado(EstadosdosInimigos.GoingtoPlayer);
