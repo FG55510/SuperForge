@@ -19,11 +19,17 @@ public class EnemyStateManager : MonoBehaviour
 
     [SerializeField] private EstadosdosInimigos estadoatual;
 
+    private Animator anim;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Gun = GetComponent<ArmaInimigo>();
         moveseekplayer = GetComponent< MovimentaçãoInimigos > ();
+        anim = GetComponent<Animator>();
+
+        Gun.DefinirPlayer(player);
+        moveseekplayer.DefinirPlayer(player);
     }
 
     // Update is called once per frame
@@ -48,6 +54,7 @@ public class EnemyStateManager : MonoBehaviour
         {
             case EstadosdosInimigos.Ataque:
                 Gun.enabled = true;
+                anim.SetFloat("Speed", 0);
                 break;
 
             case EstadosdosInimigos.GoingtoPlayer:
@@ -72,4 +79,6 @@ public class EnemyStateManager : MonoBehaviour
         moveseekplayer.MudarRangeentrePlayer(novoRangeparaatirar);
 
     }
+
+
 }
