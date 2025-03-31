@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
                 PlayerAttack.Invoke(false);
             }
         }
+        
 
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && !playerdefendendo)

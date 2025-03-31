@@ -27,6 +27,7 @@ public class Katana : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("HIt");
+
         if(other.CompareTag("Inimigo"))
         {
             EnemyLife inimigoacertado = other.GetComponent<EnemyLife>();

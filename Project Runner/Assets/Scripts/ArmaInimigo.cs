@@ -31,7 +31,7 @@ void Start()
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Test");
+
         timer -= Time.deltaTime;
 
         Vector3 Direction = (player.position - transform.position).normalized;
