@@ -1,24 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("References")]
-    public Transform orientation; // Referência à orientação da câmera
+    [Header("ReferÃªncias")]
+    public Transform orientation;    // CÃ¢mera/orientaÃ§Ã£o
+    public Animator animator;        // Animator do modelo 3D
     private Rigidbody rb;
 
-    [Header("Movement")]
-    public float moveSpeed = 6f;
+    [Header("MovimentaÃ§Ã£o")]
+    public float walkSpeed = 4f;
+    public float runSpeed = 7f;
+    public KeyCode runKey = KeyCode.LeftShift;
 
     private float horizontalInput;
     private float verticalInput;
     private Vector3 moveDirection;
+    private float currentSpeed;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // Evita girar com física
+        rb.freezeRotation = true;
     }
 
     private void Update()
@@ -27,15 +29,23 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        // Direção baseada na orientação da câmera
+        // DireÃ§Ã£o baseada na cÃ¢mera
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        moveDirection.y = 0f; // Garante que o personagem não tente se mover para cima/baixo
+        moveDirection.y = 0f;
         moveDirection.Normalize();
+
+        // Corre ou anda?
+        bool isMoving = moveDirection.magnitude > 0.1f;
+        bool isRunning = Input.GetKey(runKey) && isMoving;
+        currentSpeed = isRunning ? runSpeed : walkSpeed;
+
+        // Atualiza animaÃ§Ã£o
+        float animationSpeed = isMoving ? (isRunning ? 1f : 0.5f) : 0f;
+        animator.SetFloat("Speed", animationSpeed); // 0 = idle, 0.5 = walk, 1 = run
     }
 
     private void FixedUpdate()
     {
-        // Movimento
-        rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveDirection * currentSpeed * Time.fixedDeltaTime);
     }
 }
