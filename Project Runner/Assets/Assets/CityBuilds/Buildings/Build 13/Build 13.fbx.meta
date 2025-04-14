@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Concrete 2
-    second: {fileID: 2100000, guid: 4a0444dfcf35d1449b3ee835a03a3e12, type: 2}
+    second: {fileID: 2100000, guid: 3cf06906ca536a44a94d848bccd5137f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -30,30 +30,15 @@ ModelImporter:
       name: Light Build_
     second: {fileID: 2100000, guid: 893fa18304fe0264d8f90dcc9d4fffd8, type: 2}
   - first:
-      type: UnityEngine:Texture2D
+      type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Concrete017_2K-JPG_Color
-    second: {fileID: 2800000, guid: f9e1ed426b6380149a1a9a9294fdf51f, type: 3}
+      name: Metal 1
+    second: {fileID: 2100000, guid: 33033a2b86292bf419e57803eada4410, type: 2}
   - first:
-      type: UnityEngine:Texture2D
+      type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Concrete017_2K-JPG_NormalDX
-    second: {fileID: 2800000, guid: a09470f3321a8204883cd6765beb1a0f, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Concrete017_2K-JPG_Roughness
-    second: {fileID: 2800000, guid: ac08d3153d108e944bf22d5a63aa3c70, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Poliigon_MetalSteelBrushed_7174_Normal
-    second: {fileID: 2800000, guid: f6c4af16305e002408495015c8f4824c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Poliigon_MetalSteelBrushed_7174_Roughness
-    second: {fileID: 2800000, guid: 05f308657a973c446a2fcc4de630dcc4, type: 3}
+      name: Windows 3.1
+    second: {fileID: 2100000, guid: 2d2e09d6487595e4784ec93ce2548adf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
