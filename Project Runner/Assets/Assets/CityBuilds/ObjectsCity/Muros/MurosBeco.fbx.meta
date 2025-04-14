@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: 7b60be988a6b83b44b48b1ed86da454e
+guid: 9f09906bfc7c2ef42ba3601d3a241f3d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete 1 Build_
+    second: {fileID: 2100000, guid: da5082547547d604680a61a84d325020, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete_Blocks_007_basecolor
+    second: {fileID: 2800000, guid: bf0cae414e20c0445b1dac19d1bed010, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete_Blocks_007_normal
+    second: {fileID: 2800000, guid: 50cd34645e6ec1f42b49939c0314b7f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Concrete_Blocks_007_roughness
+    second: {fileID: 2800000, guid: 036993e495bd76f439444af0e130df28, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
