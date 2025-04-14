@@ -3,7 +3,87 @@ guid: d7b100c1066ab444fb61bb20539d6079
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete 3
+    second: {fileID: 2100000, guid: 4f440ce1f6d5b8d48bf76caa789273e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete 9
+    second: {fileID: 2100000, guid: cc10b6d8931b28549ab9017f795110f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light 1
+    second: {fileID: 2100000, guid: 347f7086fc3c28649a14c40e7f0237ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Door 1 Build_
+    second: {fileID: 2100000, guid: 7e25b1724d8b2944091f22f57cc22004, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MolduraWindow1_
+    second: {fileID: 2100000, guid: c0a3642457440fd46b46bd4e449ba273, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows 5
+    second: {fileID: 2100000, guid: e3382b0609ee7314db2d1240cbf1db3d, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalGalvanizedSteelWorn001_COL_2K_METALNESS
+    second: {fileID: 2800000, guid: 2c82fab4465112a418f2642df105840a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalGalvanizedSteelWorn001_METALNESS_2K_METALNESS
+    second: {fileID: 2800000, guid: 29d57c76adf4440499976a569af242df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalGalvanizedSteelWorn001_NRM_2K_METALNESS
+    second: {fileID: 2800000, guid: 457e9f0c79b5cb94ca597271966cc0a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_basecolor
+    second: {fileID: 2800000, guid: 627b26c1673acd34190e30db099444ee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_metallic
+    second: {fileID: 2800000, guid: 91b9dc46be3006d40a9224305f97a786, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_normal
+    second: {fileID: 2800000, guid: ac1dc95881b655a459b94513af002183, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_roughness
+    second: {fileID: 2800000, guid: 9fa58a5af36437d449eb853646650bab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Texture 11
+    second: {fileID: 2800000, guid: 21c4ccecbe9f82149821a4a1876c7a01, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concrete_floor2_worn_001_diff_2k
+    second: {fileID: 2800000, guid: 2c121accd43f9fa4992e0ecb4bbd2790, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concrete_floor_worn_001_nor_gl_2k
+    second: {fileID: 2800000, guid: 1790616296e8f4f4f96f4e01f4a05779, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
