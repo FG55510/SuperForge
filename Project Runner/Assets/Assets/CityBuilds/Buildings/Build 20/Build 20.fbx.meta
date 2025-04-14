@@ -3,7 +3,97 @@ guid: b594f78deb43f494d83db0b846ba1bc3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete 9
+    second: {fileID: 2100000, guid: c273f4e26414cb940ab2c606860cb095, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass 2
+    second: {fileID: 2100000, guid: ccb338e9e579b814a8259b1078bc77c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LampadaPlastic2
+    second: {fileID: 2100000, guid: 0379fea373ea53c4abb47867bbb209e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light 1
+    second: {fileID: 2100000, guid: 46d8d955b3a661b40abc1cafe37d33c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal 3
+    second: {fileID: 2100000, guid: 2de35700a9d82c34fb13087d6e915158, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal 4
+    second: {fileID: 2100000, guid: cc9239b931f9c0a4e8fa735b094c6a41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows 10
+    second: {fileID: 2100000, guid: b2f967165ce40434b8f0f92913324747, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalCorrodedHeavy001_COL_2K_METALNESS
+    second: {fileID: 2800000, guid: ef253174cd2a58e4b81595ebb72600f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalCorrodedHeavy001_NRM16_2K_METALNESS
+    second: {fileID: 2800000, guid: a591c8c482a2870418864b814119aa8a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MetalCorrodedHeavy001_ROUGHNESS_2K_METALNESS
+    second: {fileID: 2800000, guid: d27377587c39718448967b04e76727e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_basecolor
+    second: {fileID: 2800000, guid: 5cc33a94a20b9404485ff457878fcf25, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_metallic
+    second: {fileID: 2800000, guid: 822777b5f4eaf30499695fd2bef7f3d9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_normal
+    second: {fileID: 2800000, guid: 68f7dadbb2d1bfe458ff876296e1879d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Panels_009_roughness
+    second: {fileID: 2800000, guid: e6fe059883feb6d4195f7d53a4f83acf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Texture 7.1
+    second: {fileID: 2800000, guid: f111f4d26e2d4a94c897024c1492ebf3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_03_diff_2k
+    second: {fileID: 2800000, guid: 86d5f3374d8f61f4fb779a809f3bff7f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_03_nor_gl_2k
+    second: {fileID: 2800000, guid: 13243384bccdf0a4aa063dabb4664711, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_03_rough_2k
+    second: {fileID: 2800000, guid: c40298edc9f22a642a1cde0f8ce459d2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
