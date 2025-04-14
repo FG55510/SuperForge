@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 301e7e1163514cc43980481591b04ed1
+guid: 38bbbe96fe80aae408ab232c9806c0c6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,28 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Concrete 3 Build_
-    second: {fileID: 2100000, guid: 1476777ee5fe18a48aa02d64befd292e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Light 1
-    second: {fileID: 2100000, guid: 90a0dda3726d4514da65282b08ca75d2, type: 2}
+    second: {fileID: 2100000, guid: 7058ead624b8f6241ab4990fe61cdf88, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Metal 1
-    second: {fileID: 2100000, guid: 33033a2b86292bf419e57803eada4410, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Outdoor1
-    second: {fileID: 2100000, guid: e0c69e6f4298b10408f4dea940106b68, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Windows 6
-    second: {fileID: 2100000, guid: 49b97e7a4bfcfed4c8f33f78d811c48b, type: 2}
+      name: Metal 3
+    second: {fileID: 2100000, guid: 25104826ba5b88046bd226ec3038dee1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
