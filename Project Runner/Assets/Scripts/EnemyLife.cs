@@ -7,6 +7,7 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private Tipodeinimigo tipodesteinimigo;
     [SerializeField] private int vidamax;
     [SerializeField] private int vidaatual;
+    [SerializeField] private EnemyTypeSelection fontedoinimigo;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,7 +38,10 @@ public class EnemyLife : MonoBehaviour
         if (vidaatual <= 0)
         {
             vidaatual = 0;
-            Debug.Log("inimigo morreu");
+            //death animation
+            vidaatual = vidamax;
+            fontedoinimigo.ResetdeInimigos();
+            GameManager.INSTANCE.CheckInimigosRestantes();
         }
     }
 
@@ -46,7 +50,7 @@ public class EnemyLife : MonoBehaviour
         switch (tipo)
         {
             case Tipodeinimigo.InimigoGrande:
-                vidamax = 1500;
+                vidamax = 4500;
                 break;
             case Tipodeinimigo.InimigoMedio:
                 vidamax = 1000;

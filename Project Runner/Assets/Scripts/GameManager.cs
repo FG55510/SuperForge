@@ -13,56 +13,118 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public UnityEvent<int> IniciodaWave;
+    public UnityEvent FimdaWave;
+    [SerializeField] private int waveatual;
+
+
     public UnityEvent<int> PlayerTomaDano;
+    public UnityEvent Playermorre;
+
+    public UnityEvent<int> PlayerCuraVida;
+
 
     public UnityEvent<bool> PlayerDefend;
-    private bool playerdefendendo;
+    
+    enum Escudoplayer { EscudoAtivo, Escudoquebrado, EscudoInativo}
+    Escudoplayer estadodoescudo;
+    [SerializeField] private float duraçãocooldownescudo;
+    private float cooldownescudo;
 
     public UnityEvent<bool> PlayerAttack;
+
     [SerializeField] private float Duracaodoataque;
-    [SerializeField] private float timer;
-    private bool timerativo;
+    [SerializeField] private float timerataque;
+    private bool timerataqueativo;
 
   
     private void Start()
     {
-        timer = Duracaodoataque;
-        timerativo = false;
-        playerdefendendo = false;
+        waveatual = 1;
+
+
+        timerataque = Duracaodoataque;
+        timerataqueativo = false;
+        estadodoescudo = Escudoplayer.EscudoInativo;
+        cooldownescudo = duraçãocooldownescudo;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !timerativo)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            PlayerAttack.Invoke(true);
-            timerativo = true;
+            IniciodaWave.Invoke(waveatual);
         }
 
-        if (timerativo)
+        
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !timerataqueativo)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            PlayerAttack.Invoke(true);
+            timerataqueativo = true;
+        }
+
+        if (timerataqueativo)
+        {
+            timerataque -= Time.deltaTime;
+            if (timerataque <= 0)
             {
-                timer = Duracaodoataque;
+                timerataque = Duracaodoataque;
                 Debug.Log("Fim de Ataque");
-                timerativo = false;
+                timerataqueativo = false;
                 PlayerAttack.Invoke(false);
             }
         }
         
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !playerdefendendo)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && estadodoescudo == Escudoplayer.EscudoInativo)
         {
             Debug.Log("Defesa");
             PlayerDefend.Invoke(true);
-            playerdefendendo = true;
+            estadodoescudo = Escudoplayer.EscudoAtivo;
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse1) && playerdefendendo)
+        else if (Input.GetKeyUp(KeyCode.Mouse1) && estadodoescudo == Escudoplayer.EscudoAtivo)
         {
             Debug.Log("DefesaStop");
             PlayerDefend.Invoke(false);
-            playerdefendendo = false;
+            estadodoescudo = Escudoplayer.EscudoInativo;
+        }
+
+        if(estadodoescudo == Escudoplayer.Escudoquebrado)
+        {
+            cooldownescudo -= Time.deltaTime;
+            if(cooldownescudo <= 0)
+            {
+                estadodoescudo = Escudoplayer.EscudoInativo;
+                cooldownescudo = duraçãocooldownescudo;
+            }
         }
     }
+
+    public void AtivaaWave()
+    {
+        IniciodaWave.Invoke(waveatual);
+    }
+
+    private void FinaldaWave()
+    {
+        FimdaWave.Invoke();
+        waveatual++;
+    }
+
+    public void CheckInimigosRestantes()
+    {
+        EnemyLife inimigoativo = FindAnyObjectByType<EnemyLife>();
+        if (inimigoativo == null)
+        {
+            FinaldaWave();
+        }
+    }
+
+    public void EscudoQuebrado()
+    {
+        estadodoescudo = Escudoplayer.Escudoquebrado;
+
+    }
+
 }
