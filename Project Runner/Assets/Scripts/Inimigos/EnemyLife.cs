@@ -46,11 +46,11 @@ public class EnemyLife : MonoBehaviour
                 vidamax = 4500;
                 break;
             case Tipodeinimigo.InimigoMedio:
-                vidamax = 1000;
+                vidamax = 900;
                 break;
 
             case Tipodeinimigo.Inimigopequeno:
-                vidamax = 500;
+                vidamax = 300;
                 break;
 
         }

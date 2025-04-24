@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -11,6 +12,7 @@ public class ArmaInimigo : MonoBehaviour
     [SerializeField] private LayerMask LayerPlayer;
 
     private LineRenderer laserline;
+    private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
 
     public float timertoshoot;
 
@@ -44,8 +46,11 @@ void Start()
             
 
             RaycastHit hit;
+            StartCoroutine(ShotEffect());
+            laserline.SetPosition(0, arma.position);
             if (Physics.Raycast(arma.position, Direction, out hit, 1000f, LayerPlayer))
             {
+                laserline.SetPosition(1, hit.point);
                 Debug.DrawRay(arma.position, Direction * 1000f, Color.red);
                   GameManager.INSTANCE.PlayerTomaDano.Invoke(dano);
                 anim.SetTrigger("Shoot");
@@ -62,7 +67,19 @@ void Start()
         
     }
 
+    private IEnumerator ShotEffect()
+    {
+        SoundManager.INSTANCE.PlayEnemyRoboAtack();
 
+        // Turn on our line renderer
+        laserline.enabled = true;
+
+        //Wait for .07 seconds
+        yield return shotDuration;
+
+        // Deactivate our line renderer after waiting
+        laserline.enabled = false;
+    }
     public void DefinirPlayer(Transform target)
     {
         player = target;
