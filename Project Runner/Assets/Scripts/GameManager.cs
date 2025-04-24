@@ -12,32 +12,36 @@ public class GameManager : MonoBehaviour
             INSTANCE = this;
         }
     }
-
+    [Header("--- Controles de Wave ---")]
     public UnityEvent<int> IniciodaWave;
     public UnityEvent FimdaWave;
     [SerializeField] private int waveatual;
 
-
+    [Header("--- Controles vida do Player ---")]
     public UnityEvent<int> PlayerTomaDano;
     public UnityEvent Playermorre;
-
     public UnityEvent<int> PlayerCuraVida;
+    public UnityEvent<Vector3> ItemdeCuraDropado;
 
-
-    public UnityEvent<bool> PlayerDefend;
-    
+    [Header("--- Controles escudo do Player ---")]
+    public UnityEvent<bool> PlayerDefend; 
     enum Escudoplayer { EscudoAtivo, Escudoquebrado, EscudoInativo}
     Escudoplayer estadodoescudo;
     [SerializeField] private float duraçãocooldownescudo;
     private float cooldownescudo;
 
-    public UnityEvent<bool> PlayerAttack;
 
+    [Header("--- Controles ataque do Player ---")]
+    public UnityEvent<bool> PlayerAttack;
     [SerializeField] private float Duracaodoataque;
     [SerializeField] private float timerataque;
     private bool timerataqueativo;
 
-  
+    [Header("--- Controles combo do Player ---")]
+    [SerializeField] private int comboamount;
+    [SerializeField] private float duraçãocombo;
+
+
     private void Start()
     {
         waveatual = 1;
@@ -61,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerAttack.Invoke(true);
             timerataqueativo = true;
+            SoundManager.INSTANCE.PlayAtack();
         }
 
         if (timerataqueativo)
@@ -126,5 +131,7 @@ public class GameManager : MonoBehaviour
         estadodoescudo = Escudoplayer.Escudoquebrado;
 
     }
+
+
 
 }

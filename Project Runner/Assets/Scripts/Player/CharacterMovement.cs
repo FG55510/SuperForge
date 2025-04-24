@@ -22,11 +22,15 @@ public class CharacterMovement : MonoBehaviour
     private Camera mainCamera;
     private float velocity;
 
+    [SerializeField] private float timerentrepassos;
+    [SerializeField] private float timerpassos;
 	// Use this for initialization
 	void Start ()
 	{
 	    anim = GetComponent<Animator>();
 	    mainCamera = Camera.main;
+
+            timerpassos = timerentrepassos;
 	}
 	
 	// Update is called once per frame
@@ -51,6 +55,9 @@ public class CharacterMovement : MonoBehaviour
             direction = 0f;
         
         anim.SetFloat("Direction", direction);
+
+            
+        
 	    
         // set sprinting
 	    isSprinting = ((Input.GetKey(sprintJoystick) || Input.GetKey(sprintKeyboard)) && input != Vector2.zero && direction >= 0f);
