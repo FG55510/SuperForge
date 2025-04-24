@@ -5,11 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager INSTANCE;
+    private void Awake()
+    {
+        if (INSTANCE == null)
+        {
+            INSTANCE = this;
+        }
+    }
     [Header("--- Audio Source ---")]
     public AudioSource musicSource;
     public AudioSource sfxSource;
-    public AudioSource walkSource;
-    public AudioSource runSource;
+    public AudioSource playerSource;
+    public AudioSource inimigoSource;
 
     [Header("--- Music ---")]
     public AudioClip cyberpunk;
@@ -19,23 +27,42 @@ public class SoundManager : MonoBehaviour
     public AudioClip sfxWalk;
     public AudioClip sfxRun;
 
+    [Header("--- InimigoRoboSFX ---")]
+    public AudioClip sfxRoboAtack;
+    public AudioClip sfxRoboWalk;
 
-    public void PlaySfx(AudioClip clip)
+    [Header("--- InimigoRoboSFX ---")]
+    public AudioClip sfxAgentAtack;
+    public AudioClip sfxAgentWalk;
+
+    public void PlayAtack()
     {
-        if (sfxSource != null)
-        {
-            sfxSource.PlayOneShot(clip);
-        }
+        playerSource.PlayOneShot(sfxAttack);
+  
     }
 
-    public void PlayWalk(AudioClip clip)
+    public void PlayWalk()
     {
-        walkSource.PlayOneShot(clip);
+        playerSource.PlayOneShot(sfxWalk);
     }
 
-    public void PlayRun(AudioClip clip)
+    public void PlayRun()
     {
-        runSource.PlayOneShot(clip);
+        playerSource.PlayOneShot(sfxRun);
+    }
+
+    public void PlayEnemyRoboAtack()
+    {
+        inimigoSource.PlayOneShot(sfxRoboAtack);
     }
     
+    public void StopPlayingAtack()
+    {
+        playerSource.Stop();
+    }
+
+    public void ConfigureVFX()
+    {
+        playerSource.Play();
+    }
 }

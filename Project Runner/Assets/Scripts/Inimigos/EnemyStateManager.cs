@@ -10,9 +10,9 @@ public enum EstadosdosInimigos
 public class EnemyStateManager : MonoBehaviour
 {
     [SerializeField] private ArmaInimigo Gun;
-    [SerializeField] private MovimentaçãoInimigos moveseekplayer;
+    [SerializeField] private MovimentaçãoInimigosOtimizada moveseekplayer;
 
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
     [SerializeField] private float distanciadoplayer;
     [SerializeField] private float RangeMaximoparaatirar;
     [SerializeField] private float RangeMinimoparaatirar;
@@ -25,24 +25,26 @@ public class EnemyStateManager : MonoBehaviour
     void Start()
     {
         Gun = GetComponent<ArmaInimigo>();
-        moveseekplayer = GetComponent< MovimentaçãoInimigos > ();
+        moveseekplayer = GetComponent< MovimentaçãoInimigosOtimizada> ();
         anim = GetComponent<Animator>();
 
-        Gun.DefinirPlayer(player);
-        moveseekplayer.DefinirPlayer(player);
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        Gun.DefinirPlayer(player.transform);
+        moveseekplayer.DefinirPlayer(player.transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        distanciadoplayer = Vector3.Distance(player.position, transform.position);
+        distanciadoplayer = Vector3.Distance(player.transform.position, transform.position);
 
         
-        if(distanciadoplayer > moveseekplayer.rangeatual && estadoatual != EstadosdosInimigos.GoingtoPlayer)
+        if(distanciadoplayer > moveseekplayer.rangeAtual && estadoatual != EstadosdosInimigos.GoingtoPlayer)
         {
             MudarEstado(EstadosdosInimigos.GoingtoPlayer);
         }
-        else if (distanciadoplayer <= moveseekplayer.rangeatual && estadoatual != EstadosdosInimigos.Ataque)
+        else if (distanciadoplayer <= moveseekplayer.rangeAtual && estadoatual != EstadosdosInimigos.Ataque)
         {
             MudarEstado(EstadosdosInimigos.Ataque);
         }

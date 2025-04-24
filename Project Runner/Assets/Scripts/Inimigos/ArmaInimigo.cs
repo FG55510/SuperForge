@@ -6,10 +6,11 @@ public class ArmaInimigo : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-    [SerializeField] private int dano;
+    [SerializeField] private int dano = 200;
 
     [SerializeField] private LayerMask LayerPlayer;
 
+    private LineRenderer laserline;
 
     public float timertoshoot;
 
@@ -26,6 +27,7 @@ public class ArmaInimigo : MonoBehaviour
 void Start()
     {
         anim = GetComponent<Animator>();
+        laserline = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame

@@ -9,6 +9,8 @@ public class EnemyLife : MonoBehaviour
     [SerializeField] private int vidaatual;
     [SerializeField] private EnemyTypeSelection fontedoinimigo;
 
+    [SerializeField] private int chanceemumdedroparitemdecura;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,20 +18,6 @@ public class EnemyLife : MonoBehaviour
         Checatipodeinimigo(tipodesteinimigo);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Tiravida(100);
-            Debug.Log("vida inimigo: " + vidaatual + "/" + vidamax);
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Checatipodeinimigo(tipodesteinimigo);
-        }
-    }
 
     public void Tiravida(int dano)
     {
@@ -41,6 +29,11 @@ public class EnemyLife : MonoBehaviour
             //death animation
             vidaatual = vidamax;
             fontedoinimigo.ResetdeInimigos();
+            int chance = Random.Range(1, chanceemumdedroparitemdecura);
+            if(chance == 1)
+            {
+                GameManager.INSTANCE.ItemdeCuraDropado.Invoke(transform.position);
+            }
             GameManager.INSTANCE.CheckInimigosRestantes();
         }
     }

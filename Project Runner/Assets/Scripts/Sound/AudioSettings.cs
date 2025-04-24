@@ -7,6 +7,7 @@ public class AudioSettings : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider musicSlider;
+    [SerializeField] private bool isPlayingSFX = false;
 
     private void Start()
     {
@@ -27,6 +28,14 @@ public class AudioSettings : MonoBehaviour
         float volume = sfxSlider.value;
         audioMixer.SetFloat("sfx", Mathf.Log10(volume)*20);
         PlayerPrefs.SetFloat("sfxVolume", volume);
+        if (!isPlayingSFX)
+        {
+            SoundManager.INSTANCE.ConfigureVFX();
+            isPlayingSFX = true;
+        }
+        CancelInvoke();
+        Invoke("StopPlayingVfx", 1f);
+
     }
     
     public void SetMusicVolume()
@@ -42,5 +51,11 @@ public class AudioSettings : MonoBehaviour
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
         SetMusicVolume();
         SetSFXVolume();
+    }
+
+    private void StopPlayingVfx()
+    {
+        SoundManager.INSTANCE.StopPlayingAtack();
+        isPlayingSFX = false;
     }
 }
