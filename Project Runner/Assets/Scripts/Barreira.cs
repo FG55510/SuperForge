@@ -3,17 +3,20 @@ using UnityEngine;
 public class Barreira : MonoBehaviour
 {
     private Collider barreira;
+    private MeshRenderer mesh;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GameManager.INSTANCE.IniciodaWave.AddListener(PrendePlayer);
         GameManager.INSTANCE.FimdaWave.AddListener(PlayerLiberto);
         barreira = GetComponent<Collider>();
+        mesh = GetComponent<MeshRenderer>();
     }
 
 
     private void PrendePlayer(int a)
-    {
+    { 
+        mesh.enabled = true;
         barreira.isTrigger = false;
         print("player preso");
     }
@@ -21,6 +24,7 @@ public class Barreira : MonoBehaviour
     private void PlayerLiberto()
     {
         barreira.isTrigger = true;
+        mesh.enabled = false;
         print("player liberado");
     }
 

@@ -33,6 +33,10 @@ public class CharacterMovement : MonoBehaviour
             timerpassos = timerentrepassos;
 	}
 	
+    void PlayerMorreu(){
+        gameObject.SetActive(false);
+    }
+
 	// Update is called once per frame
 	void FixedUpdate ()
 	{

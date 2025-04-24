@@ -7,7 +7,6 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private int vidaatual;
 
     [SerializeField] private bool Escudo = false;
-    [SerializeField] private int Protecaodoescudo;
     [SerializeField] private int Vidaescudoatual;
     [SerializeField] private int Vidaescudomax=3;
 
@@ -48,8 +47,8 @@ public class PlayerLife : MonoBehaviour
         if (vidaatual <= 0)
         {
             vidaatual = 0;
-            //animação de morte
-            
+            //animaï¿½ï¿½o de morte
+            GameManager.INSTANCE.Playermorre.Invoke();
             
         }
     }
