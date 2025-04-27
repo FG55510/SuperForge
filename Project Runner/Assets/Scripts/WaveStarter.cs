@@ -7,6 +7,7 @@ public class WaveStarter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.INSTANCE.AtivaaWave();
+            gameObject.SetActive(false);
         }
     }
 }
