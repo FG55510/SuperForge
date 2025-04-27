@@ -42,7 +42,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.7129
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalPosition.y
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.64850736
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58,15 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -82,7 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_Name
-      value: Y Bot (1)
+      value: Inimigosmeelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53057c8040129a8409c139902a96b571, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_Controller
@@ -109,7 +113,10 @@ PrefabInstance:
       addedObject: {fileID: 6715578155336784509}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 53057c8040129a8409c139902a96b571, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7305915740324315158}
+      addedObject: {fileID: 3383414559229338696}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 53057c8040129a8409c139902a96b571, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 986632811483290784}
   m_SourcePrefab: {fileID: 100100000, guid: 53057c8040129a8409c139902a96b571, type: 3}
 --- !u!4 &287075270246853323 stripped
 Transform:
@@ -206,11 +213,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataque: {fileID: 6187528211507628948}
-  move: {fileID: 7305915740324315158}
+  move: {fileID: 0}
   player: {fileID: 0}
   distanciadoplayer: 0
   range: 2
---- !u!114 &7305915740324315158
+--- !u!114 &3383414559229338696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,13 +226,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1625553674698369106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5816f7869c4314ca35a29305ee2823, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bd05edcc8281b74789e0f2a5560b9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeatual: 2
+  tipodesteinimigo: 2
+  vidamax: 0
+  vidaatual: 0
+  fontedoinimigo: {fileID: 0}
+  chanceemumdedroparitemdecura: 0
+--- !u!114 &986632811483290784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625553674698369106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b7f3c2868c38a43b0fdf33410abe53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 0}
   anim: {fileID: 0}
-  velocity: 0
+  velocidade: 3
+  rangeAtual: 2
 --- !u!1001 &7218809987754352339
 PrefabInstance:
   m_ObjectHideFlags: 0
