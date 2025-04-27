@@ -46,7 +46,10 @@ void Start()
             
 
             RaycastHit hit;
+<<<<<<< Updated upstream
             StartCoroutine(ShotEffect());
+=======
+>>>>>>> Stashed changes
             laserline.SetPosition(0, arma.position);
             if (Physics.Raycast(arma.position, Direction, out hit, 1000f, LayerPlayer))
             {
@@ -69,7 +72,11 @@ void Start()
 
     private IEnumerator ShotEffect()
     {
+<<<<<<< Updated upstream
         SoundManager.INSTANCE.PlayEnemyRoboAtack();
+=======
+        
+>>>>>>> Stashed changes
 
         // Turn on our line renderer
         laserline.enabled = true;
