@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7924058325157602971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907780582447572019}
+  - component: {fileID: 2064121508261420194}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907780582447572019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924058325157602971}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.863266, y: 0.87837124, z: -6.3337984}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2064121508261420194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924058325157602971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa1e96acc8c9c740b47192fc853a016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IniciodaWave:
+    m_PersistentCalls:
+      m_Calls: []
+  FimdaWave:
+    m_PersistentCalls:
+      m_Calls: []
+  waveatual: 0
+  PlayerTomaDano:
+    m_PersistentCalls:
+      m_Calls: []
+  Playermorre:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerCuraVida:
+    m_PersistentCalls:
+      m_Calls: []
+  ItemdeCuraDropado:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerDefend:
+    m_PersistentCalls:
+      m_Calls: []
+  "dura\xE7\xE3ocooldownescudo": 0
+  PlayerAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  Duracaodoataque: 0.5
+  timerataque: 0
+  comboamount: 0
+  "dura\xE7\xE3ocombo": 0

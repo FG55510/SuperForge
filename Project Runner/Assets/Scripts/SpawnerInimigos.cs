@@ -22,10 +22,6 @@ public class SpawnerInimigos : MonoBehaviour
     [SerializeField] private GameObject inimigospawnado;
     
 
-    [SerializeField] private int testenumber1;
-    [SerializeField] private int testenumber2;
-    [SerializeField] private int testenumber3;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,11 +29,6 @@ public class SpawnerInimigos : MonoBehaviour
         GameManager.INSTANCE.IniciodaWave.AddListener(SpawnInimigos);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SpawnInimigos(int waveatual)
     {
