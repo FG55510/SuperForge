@@ -72,19 +72,13 @@ void Start()
 
     private IEnumerator ShotEffect()
     {
-<<<<<<< Updated upstream
         SoundManager.INSTANCE.PlayEnemyRoboAtack();
-=======
-        
->>>>>>> Stashed changes
 
-        // Turn on our line renderer
         laserline.enabled = true;
 
-        //Wait for .07 seconds
         yield return shotDuration;
 
-        // Deactivate our line renderer after waiting
+
         laserline.enabled = false;
     }
     public void DefinirPlayer(Transform target)
