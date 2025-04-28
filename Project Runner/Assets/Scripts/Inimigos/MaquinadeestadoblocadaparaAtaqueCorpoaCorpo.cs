@@ -19,6 +19,7 @@ public class MaquinadeestadoblocadaparaAtaqueCorpoaCorpo : MonoBehaviour
         ataque = GetComponentInChildren<AtaqueCorpoaCorpoInimigos>();
         move = GetComponent<MovimentaçãoInimigosOtimizada>();
         move.DefinirPlayer(player.transform);
+        ataque.DeterminaPlayer(player.transform);
     }
 
     // Update is called once per frame

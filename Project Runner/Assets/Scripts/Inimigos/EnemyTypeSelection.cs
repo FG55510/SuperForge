@@ -10,16 +10,7 @@ public class EnemyTypeSelection : MonoBehaviour
 
     [SerializeField] private Tipodeinimigo tipoatualdesteinimigo; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void TipodeInimigoSelecionado(Tipodeinimigo tipo)
     {
@@ -51,8 +42,8 @@ public class EnemyTypeSelection : MonoBehaviour
 
     public void ResetdeInimigos()
     {
-        ModeloAgente.transform.position = new Vector3(0, 0, 0);
-        ModeloRobo.transform.position = new Vector3(0, 0, 0);
+        ModeloAgente.transform.position = transform.position;
+        ModeloRobo.transform.position = transform.position;
         ModeloAgente.SetActive(false);
         ModeloRobo.SetActive(false);
         //gameObject.SetActive(false);

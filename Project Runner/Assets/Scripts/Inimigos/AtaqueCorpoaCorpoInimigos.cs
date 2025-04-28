@@ -60,4 +60,9 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
         timerativo = true;
         anim.SetTrigger("Attack");
     } 
+
+    public void DeterminaPlayer(Transform alvo)
+    {
+        player = alvo;
+    }
 }

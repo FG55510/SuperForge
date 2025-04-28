@@ -56,10 +56,13 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            IniciodaWave.Invoke(waveatual);
+            PlayerCuraVida.Invoke(100);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            PlayerTomaDano.Invoke(100);
         }
 
-        
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !timerataqueativo)
         {

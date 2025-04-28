@@ -27,6 +27,7 @@ public class ObjectPool : MonoBehaviour
             tmp.SetActive(false);
             pooledObjects.Add(tmp);
         }
+        GameManager.INSTANCE.FimdaWave.AddListener(ResetPool);
     }
 
 
@@ -42,9 +43,19 @@ public class ObjectPool : MonoBehaviour
         return null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetPool()
     {
-        
+        for(int i = 0; i < amountToPool; i++)
+        {
+            if (pooledObjects[i].activeInHierarchy)
+            {
+                pooledObjects[i].SetActive(false);
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.INSTANCE.FimdaWave.RemoveListener(ResetPool);
     }
 }
