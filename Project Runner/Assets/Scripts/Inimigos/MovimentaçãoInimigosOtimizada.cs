@@ -32,6 +32,7 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
         {
             Vector3 movimento = direcao.normalized * velocidade;
             rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z); // mantém a gravidade no eixo Y
+            direcao.y = 0f;
 
             // Rotaciona suavemente em direção ao jogador
             Quaternion rotacaoAlvo = Quaternion.LookRotation(direcao);
