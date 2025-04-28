@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6662566401844154355}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.000000024097984, y: 0.00000007972268, z: 1, w: 0.00000014541364}
+  m_LocalPosition: {x: -0, y: -0, z: 0.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7180114474641045816}
-  m_Father: {fileID: 287075270246853323}
+  m_Father: {fileID: 4643824133683380416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1895533469337326851
 PrefabInstance:
@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 53057c8040129a8409c139902a96b571, type: 3}
       propertyPath: m_Controller
@@ -95,7 +95,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1852576806548013000, guid: 53057c8040129a8409c139902a96b571, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 6502182839619065283, guid: 53057c8040129a8409c139902a96b571, type: 3}
       insertIndex: -1
       addedObject: {fileID: 667260838705668750}
     m_AddedComponents:
@@ -118,11 +118,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 986632811483290784}
   m_SourcePrefab: {fileID: 100100000, guid: 53057c8040129a8409c139902a96b571, type: 3}
---- !u!4 &287075270246853323 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 53057c8040129a8409c139902a96b571, type: 3}
-  m_PrefabInstance: {fileID: 1895533469337326851}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625553674698369106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 53057c8040129a8409c139902a96b571, type: 3}
@@ -250,6 +245,11 @@ MonoBehaviour:
   anim: {fileID: 0}
   velocidade: 3
   rangeAtual: 2
+--- !u!4 &4643824133683380416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: 53057c8040129a8409c139902a96b571, type: 3}
+  m_PrefabInstance: {fileID: 1895533469337326851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7218809987754352339
 PrefabInstance:
   m_ObjectHideFlags: 0

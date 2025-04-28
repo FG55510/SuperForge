@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int comboamount;
     [SerializeField] private float duraçãocombo;
 
+    [Header("--- Controles da fase ---")]
+    public UnityEvent PlayerWin;
 
     private void Start()
     {
@@ -63,6 +66,10 @@ public class GameManager : MonoBehaviour
             PlayerTomaDano.Invoke(100);
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            VoltaMenu();
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !timerataqueativo)
         {
@@ -135,6 +142,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    private void VoltaMenu()
+    {
+        SceneManager.LoadScene( "MenuPrincipal");
+    }
 
 }

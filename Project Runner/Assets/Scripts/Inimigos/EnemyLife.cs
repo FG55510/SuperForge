@@ -16,6 +16,7 @@ public class EnemyLife : MonoBehaviour
     void Start()
     {
         Checatipodeinimigo(tipodesteinimigo);
+        chanceemumdedroparitemdecura = 3;
     }
 
 
@@ -28,12 +29,15 @@ public class EnemyLife : MonoBehaviour
             vidaatual = 0;
             //death animation
             vidaatual = vidamax;
-            fontedoinimigo.ResetdeInimigos();
             int chance = Random.Range(1, chanceemumdedroparitemdecura);
-            if(chance == 1)
+            if (chance == 1)
             {
                 GameManager.INSTANCE.ItemdeCuraDropado.Invoke(transform.position);
             }
+            fontedoinimigo.ResetdeInimigos();
+            
+            
+            
             GameManager.INSTANCE.CheckInimigosRestantes();
         }
     }

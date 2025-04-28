@@ -38,6 +38,7 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
                 timer = Duracaodoataque;
                 Debug.Log("Fim de Ataque inimigo");
                 timerativo = false;
+                HitBox.enabled = false;
             }
         }
     }
@@ -47,8 +48,8 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
     {
         Debug.Log("HIt");
 
-
         
+
         if (other.CompareTag("Player") )
         {
             GameManager.INSTANCE.PlayerTomaDano.Invoke(dano);
@@ -59,6 +60,7 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
     {
         timerativo = true;
         anim.SetTrigger("Attack");
+        HitBox.enabled = true;
     } 
 
     public void DeterminaPlayer(Transform alvo)
