@@ -1368,6 +1368,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2006575369375583739, guid: 848fb71a99c166642a1b0e16ba3fdeec, type: 3}
+      propertyPath: cyberpunk
+      value: 
+      objectReference: {fileID: 8300000, guid: e52f27289260b394db7cf4edb9c5d419, type: 3}
+    - target: {fileID: 7116862721338092122, guid: 848fb71a99c166642a1b0e16ba3fdeec, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9010,8 +9018,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3c8c52286b5658c4e95ff4a83a0c9074, type: 3}
-  m_Resource: {fileID: 8300000, guid: 3c8c52286b5658c4e95ff4a83a0c9074, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 757f39274b5111b45b5b3dfed98ffe15, type: 3}
+  m_Resource: {fileID: 8300000, guid: 757f39274b5111b45b5b3dfed98ffe15, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
