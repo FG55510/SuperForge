@@ -62,7 +62,6 @@ public class EnemyStateManager : MonoBehaviour
                 break;
 
             case EstadosdosInimigos.GoingtoPlayer:
-                MudarRangeentrePlayer();
                 moveseekplayer.enabled = true;
                 break;
         }
