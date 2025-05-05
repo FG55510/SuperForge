@@ -69,7 +69,7 @@ public class PlayerLife : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameManager.INSTANCE.PlayerAttack.RemoveListener(EstacomEscudo);
+        //GameManager.INSTANCE.PlayerAttack.RemoveListener(EstacomEscudo);
         GameManager.INSTANCE.PlayerCuraVida.RemoveListener(CuraPlayer);
         // GameManager.INSTANCE.PlayerAttack.RemoveListener(Tiravida);
     }
