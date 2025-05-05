@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void AtualizaEscudo(bool a, EscudoPlayer estado){
-        swich(estado){
+        switch(estado){
             case EscudoPlayer.EscudoAtivo:
                 Escudomain.sprite =EscudoAtivo;
                 break;
@@ -76,8 +76,7 @@ public class UIManager : MonoBehaviour
         
         }
         
-
-}
+    }
 
     private void Win()
     {
