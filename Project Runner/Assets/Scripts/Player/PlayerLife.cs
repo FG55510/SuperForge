@@ -37,7 +37,7 @@ public class PlayerLife : MonoBehaviour
             Vidaescudoatual--;
             if(Vidaescudoatual <= 0)
             {
-                GameManager.INSTANCE.EscudoQuebrado();
+                GameManager.INSTANCE.EscudoFoiQuebrado();
                 Vidaescudoatual = Vidaescudomax;
             }
 
