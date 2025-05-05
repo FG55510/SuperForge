@@ -3,6 +3,8 @@ using UnityEngine.Events;
 using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.SceneManagement;
 
+public enum EscudoPlayer { EscudoAtivo, EscudoQuebrado, EscudoInativo}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager INSTANCE;
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<Vector3> ItemdeCuraDropado;
 
     [Header("--- Controles escudo do Player ---")]
-    public enum EscudoPlayer { EscudoAtivo, EscudoQuebrado, EscudoInativo}
+    
     public UnityEvent<bool, EscudoPlayer> PlayerDefend;
     Escudoplayer estadodoescudo;
     [SerializeField] private float duraçãocooldownescudo;
