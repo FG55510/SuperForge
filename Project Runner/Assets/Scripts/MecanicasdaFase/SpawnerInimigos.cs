@@ -80,7 +80,7 @@ public class SpawnerInimigos : MonoBehaviour
 
                 for (int i = 0; i < numeroderobosparainvocar2; i++)
                 {
-                    int randomspawner = Random.Range(0, Positionspawnerswave2.Count + 1);
+                    int randomspawner = Random.Range(0, Positionspawnerswave2.Count);
                     Transform p = Positionspawnerswave2[randomspawner];
 
                     inimigospawnado = pooldeinimigos.GetPooledObject();
@@ -96,7 +96,7 @@ public class SpawnerInimigos : MonoBehaviour
             case 3:
                 for (int i = 0; i < numerodeagentesparainvocar3; i++)
                 {
-                    int randomspawner = Random.Range(0, Positionspawnerswave3.Count + 1);
+                    int randomspawner = Random.Range(0, Positionspawnerswave3.Count);
                     Transform p = Positionspawnerswave3[randomspawner];
 
                     inimigospawnado = pooldeinimigos.GetPooledObject();
@@ -109,7 +109,7 @@ public class SpawnerInimigos : MonoBehaviour
 
                 for (int i = 0; i < numeroderobosparainvocar3; i++)
                 {
-                    int randomspawner = Random.Range(0, Positionspawnerswave3.Count + 1);
+                    int randomspawner = Random.Range(0, Positionspawnerswave3.Count);
                     Transform p = Positionspawnerswave3[randomspawner];
 
                     inimigospawnado = pooldeinimigos.GetPooledObject();
