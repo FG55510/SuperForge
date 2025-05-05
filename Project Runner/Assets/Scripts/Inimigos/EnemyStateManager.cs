@@ -10,7 +10,7 @@ public enum EstadosdosInimigos
 public class EnemyStateManager : MonoBehaviour
 {
     [SerializeField] private ArmaInimigo Gun;
-    [SerializeField] private MovimentaçãoInimigosOtimizada moveseekplayer;
+    [SerializeField] private MovimentaÃ§Ã£oInimigosOtimizada moveseekplayer;
 
     [SerializeField] private GameObject player;
     [SerializeField] private float distanciadoplayer;
@@ -25,7 +25,7 @@ public class EnemyStateManager : MonoBehaviour
     void Start()
     {
         Gun = GetComponent<ArmaInimigo>();
-        moveseekplayer = GetComponent< MovimentaçãoInimigosOtimizada> ();
+        moveseekplayer = GetComponent< MovimentaÃ§Ã£oInimigosOtimizada> ();
         anim = GetComponent<Animator>();
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -40,11 +40,11 @@ public class EnemyStateManager : MonoBehaviour
         distanciadoplayer = Vector3.Distance(player.transform.position, transform.position);
 
         
-        if(distanciadoplayer > moveseekplayer.rangeAtual && estadoatual != EstadosdosInimigos.GoingtoPlayer)
+        if(distanciadoplayer > moveseekplayer.rangemaxlongedoplayer && estadoatual != EstadosdosInimigos.GoingtoPlayer)
         {
             MudarEstado(EstadosdosInimigos.GoingtoPlayer);
         }
-        else if (distanciadoplayer <= moveseekplayer.rangeAtual && estadoatual != EstadosdosInimigos.Ataque)
+        else if (distanciadoplayer <= moveseekplayer.rangemaxlongedoplayer && estadoatual != EstadosdosInimigos.Ataque)
         {
             MudarEstado(EstadosdosInimigos.Ataque);
         }
@@ -77,12 +77,5 @@ public class EnemyStateManager : MonoBehaviour
         moveseekplayer.enabled = false;
 
     }
-    public void MudarRangeentrePlayer()
-    {
-        float novoRangeparaatirar = Random.Range(RangeMinimoparaatirar, RangeMaximoparaatirar);
-        moveseekplayer.MudarRangeentrePlayer(novoRangeparaatirar);
-
-    }
-
 
 }
