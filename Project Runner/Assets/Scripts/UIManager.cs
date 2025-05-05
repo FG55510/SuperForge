@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,12 +11,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private int vidamaxplayer = 10;
     [SerializeField] private Sprite CapsuladeDesativada;
     [SerializeField] private Sprite CapsuladeAtivada;
+    [SerializeField] private TextMeshProUGUI txtwinlose;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         vidaatualplayer = vidamaxplayer;
         GameManager.INSTANCE.PlayerTomaDano.AddListener(TiravidaUI);
         GameManager.INSTANCE.PlayerCuraVida.AddListener(SomaVidaUI);
+
+
+        GameManager.INSTANCE.Playermorre.AddListener(Lose);
+        GameManager.INSTANCE.PlayerWin.AddListener(Win);
     }
 
     public void TiravidaUI(int dano)
@@ -46,9 +52,21 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Win()
+    {
+        txtwinlose.text = "You Win";
+    }
+
+    private void Lose()
+    {
+        txtwinlose.text = "Game Over";
+    }
     private void OnDestroy()
     {
         GameManager.INSTANCE.PlayerTomaDano.RemoveListener(TiravidaUI);
         GameManager.INSTANCE.PlayerCuraVida.RemoveListener(SomaVidaUI);
+
+        GameManager.INSTANCE.Playermorre.RemoveListener(Lose);
+        GameManager.INSTANCE.PlayerWin.RemoveListener(Win);
     }
 }
