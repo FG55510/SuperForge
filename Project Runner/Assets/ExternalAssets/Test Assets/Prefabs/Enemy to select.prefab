@@ -520,7 +520,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &6441580592521939764
 MonoBehaviour:
@@ -972,7 +972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3682189180950802054, guid: dac9afb8993946243aefaea07adcb38f, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 3689575756656091098, guid: dac9afb8993946243aefaea07adcb38f, type: 3}
       propertyPath: m_Layer

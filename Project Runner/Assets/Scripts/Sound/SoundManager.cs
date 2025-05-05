@@ -35,6 +35,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip sfxAgentAtack;
     public AudioClip sfxAgentWalk;
 
+
+    private void Start()
+    {
+        musicSource.clip = cyberpunk;
+        musicSource.Play();
+    }
     public void PlayAtack()
     {
         playerSource.PlayOneShot(sfxAttack);
