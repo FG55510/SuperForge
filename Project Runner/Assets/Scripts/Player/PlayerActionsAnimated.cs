@@ -34,7 +34,7 @@ public class PlayerActionsAnimated : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.INSTANCE.PlayerAttack.RemoveListener(AttackAnimation);
-        GameManager.INSTANCE.PlayerAttack.RemoveListener(DefenceAnimation);
+        //GameManager.INSTANCE.PlayerAttack.RemoveListener(DefenceAnimation);
         GameManager.INSTANCE.Playermorre.RemoveListener(DeathAnimation);
     }
 
