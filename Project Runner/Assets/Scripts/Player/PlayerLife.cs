@@ -53,7 +53,7 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void EstacomEscudo (bool estado)
+    private void EstacomEscudo (bool estado, EscudoPlayer a)
     {
         Escudo = estado;
     }
