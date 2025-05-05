@@ -103,8 +103,8 @@ public class GameManager : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Mouse1) && estadodoescudo == EscudoPlayer.EscudoAtivo)
         {
             Debug.Log("DefesaStop");
-            PlayerDefend.Invoke(false, estadodoescudo);
             estadodoescudo = EscudoPlayer.EscudoInativo;
+            PlayerDefend.Invoke(false, estadodoescudo);
         }
 
         if(estadodoescudo == EscudoPlayer.EscudoQuebrado)
