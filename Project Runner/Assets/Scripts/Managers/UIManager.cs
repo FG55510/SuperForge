@@ -12,12 +12,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite CapsuladeDesativada;
     [SerializeField] private Sprite CapsuladeAtivada;
     [SerializeField] private TextMeshProUGUI txtwinlose;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField] private Image Escudomain;
+    [SerializeField] private Sprite EscudoAtivo;
+    [SerializeField] private Sprite EscudoInativo;
+    [SerializeField] private Sprite EscudoQuebrado;
+    
     void Start()
     {
         vidaatualplayer = vidamaxplayer;
         GameManager.INSTANCE.PlayerTomaDano.AddListener(TiravidaUI);
         GameManager.INSTANCE.PlayerCuraVida.AddListener(SomaVidaUI);
+        GameManager.INSTANCE.PlayerDefend.AddListener(AtualizaEscudo);
 
 
         GameManager.INSTANCE.Playermorre.AddListener(Lose);
@@ -51,6 +57,27 @@ public class UIManager : MonoBehaviour
             Barradevida[i].sprite = CapsuladeAtivada;
         }
     }
+
+    private void AtualizaEscudo(bool a, EscudoPlayer estado){
+        swich(estado){
+            case EscudoPlayer.EscudoAtivo:
+                Escudomain.sprite =EscudoAtivo;
+                break;
+
+            
+            case EscudoPlayer.EscudoInativo:
+                Escudomain.sprite =EscudoInativo;
+                break;
+
+            
+            case EscudoPlayer.EscudoQuebrado:
+                Escudomain.sprite =EscudoQuebrado;
+                break;
+        
+        }
+        
+
+}
 
     private void Win()
     {
