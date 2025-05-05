@@ -17,7 +17,7 @@ public class PlayerActionsAnimated : MonoBehaviour
         
     }
 
-    private void DefenceAnimation(bool estado)
+    private void DefenceAnimation(bool estado,EscudoPlayer a)
     {
         anim.SetBool("Defence", estado);
     }
