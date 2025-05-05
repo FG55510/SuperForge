@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     [Header("--- Controles escudo do Player ---")]
     
     public UnityEvent<bool, EscudoPlayer> PlayerDefend;
-    Escudoplayer estadodoescudo;
+    EscudoPlayer estadodoescudo;
     [SerializeField] private float duraçãocooldownescudo;
     private float cooldownescudo;
 
