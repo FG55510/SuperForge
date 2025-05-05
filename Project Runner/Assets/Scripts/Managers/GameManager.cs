@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour
     public UnityEvent<Vector3> ItemdeCuraDropado;
 
     [Header("--- Controles escudo do Player ---")]
-    public UnityEvent<bool> PlayerDefend; 
-    enum Escudoplayer { EscudoAtivo, Escudoquebrado, EscudoInativo}
+    public enum EscudoPlayer { EscudoAtivo, EscudoQuebrado, EscudoInativo}
+    public UnityEvent<bool, EscudoPlayer> PlayerDefend;
     Escudoplayer estadodoescudo;
-    [SerializeField] private float duraçãocooldownescudo;
+    [SerializeField] private float duraÃ§Ã£ocooldownescudo;
     private float cooldownescudo;
 
 
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     [Header("--- Controles combo do Player ---")]
     [SerializeField] private int comboamount;
-    [SerializeField] private float duraçãocombo;
+    [SerializeField] private float duraÃ§Ã£ocombo;
 
     [Header("--- Controles da fase ---")]
     public UnityEvent PlayerWin;
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         timerataque = Duracaodoataque;
         timerataqueativo = false;
         estadodoescudo = Escudoplayer.EscudoInativo;
-        cooldownescudo = duraçãocooldownescudo;
+        cooldownescudo = duraÃ§Ã£ocooldownescudo;
     }
     void Update()
     {
@@ -95,23 +95,23 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) && estadodoescudo == Escudoplayer.EscudoInativo)
         {
             Debug.Log("Defesa");
-            PlayerDefend.Invoke(true);
             estadodoescudo = Escudoplayer.EscudoAtivo;
+            PlayerDefend.Invoke(true, estadodoescudo);
         }
         else if (Input.GetKeyUp(KeyCode.Mouse1) && estadodoescudo == Escudoplayer.EscudoAtivo)
         {
             Debug.Log("DefesaStop");
-            PlayerDefend.Invoke(false);
+            PlayerDefend.Invoke(false, estadodoescudo);
             estadodoescudo = Escudoplayer.EscudoInativo;
         }
 
-        if(estadodoescudo == Escudoplayer.Escudoquebrado)
+        if(estadodoescudo == Escudoplayer.EscudoQuebrado)
         {
             cooldownescudo -= Time.deltaTime;
             if(cooldownescudo <= 0)
             {
                 estadodoescudo = Escudoplayer.EscudoInativo;
-                cooldownescudo = duraçãocooldownescudo;
+                cooldownescudo = duraÃ§Ã£ocooldownescudo;
             }
         }
     }
@@ -136,10 +136,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EscudoQuebrado()
+    public void EscudoFoiQuebrado()
     {
-        estadodoescudo = Escudoplayer.Escudoquebrado;
-
+        estadodoescudo = Escudoplayer.EscudoQuebrado;
+        PlayerDefend.Invoke(false, estadodoescudo);
     }
 
     private void VoltaMenu()
