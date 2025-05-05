@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class CursorApareceAoVoltardaCena : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void ResetCursor()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Reset to the default system cursor
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
