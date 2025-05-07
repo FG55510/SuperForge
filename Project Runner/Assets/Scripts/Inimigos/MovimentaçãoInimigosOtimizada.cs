@@ -4,11 +4,11 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private Animator anim;
-    [SerializeField] private float velocidade = 3.0f;
+    public float velocidadeperseguisao = 3.0f;
+    public float velocidaderetirada = 2.0f;
     [SerializeField] private float distancia;
     
-    public float rangeminpertodoplayer;
-    public float rangemaxlongedoplayer;
+    public float range ;
     
     public bool retirada;
 
@@ -32,12 +32,9 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
             Vector3 direcao = player.position - transform.position;
         
             distancia = direcao.magnitude;
-            if (distancia > rangemaxlongedoplayer)
+            if (distancia > range )
             {
-    
-                
-                
-                Vector3 movimento = direcao.normalized * velocidade;
+                Vector3 movimento = direcao.normalized * velocidadeperseguisao;
                 rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z); 
                 direcao.y = 0f;
     
@@ -57,7 +54,7 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
             Vector3 direcao = transform.position - player.position;
         
             distancia = direcao.magnitude;
-            Vector3 movimento = direcao.normalized * velocidade;
+            Vector3 movimento = direcao.normalized * velocidaderetirada;
             rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z); 
             direcao.y = 0f;
 

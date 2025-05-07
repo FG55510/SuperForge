@@ -539,7 +539,8 @@ MonoBehaviour:
   LayerPlayer:
     serializedVersion: 2
     m_Bits: 64
-  timertoshoot: 10
+  timertoshootquick: 0
+  timertoshootslow: 0
   timer: 5
   arma: {fileID: 2746919731684459348}
   distancia: 0
@@ -594,8 +595,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   anim: {fileID: 0}
-  velocidade: 3
-  rangeAtual: 2
+  velocidadeperseguisao: 3
+  velocidaderetirada: 2
+  distancia: 0
+  range: 0
+  retirada: 0
 --- !u!120 &3741627016899502657
 LineRenderer:
   serializedVersion: 2
@@ -946,6 +950,10 @@ PrefabInstance:
       propertyPath: fontedoinimigo
       value: 
       objectReference: {fileID: 1220099036479022258}
+    - target: {fileID: 3383414559229338696, guid: dac9afb8993946243aefaea07adcb38f, type: 3}
+      propertyPath: chanceemumdedroparitemdecura
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3435347509214096944, guid: dac9afb8993946243aefaea07adcb38f, type: 3}
       propertyPath: m_Layer
       value: 7

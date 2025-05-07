@@ -6,7 +6,8 @@ public enum EstadosdosInimigos
 {
     Ataque,
     GoingtoPlayer,
-    Playerperto
+    Playerperto,
+    MovimentoEntreAtaques
 }
 public class EnemyStateManager : MonoBehaviour
 {
@@ -41,11 +42,11 @@ public class EnemyStateManager : MonoBehaviour
         distanciadoplayer = Vector3.Distance(player.transform.position, transform.position);
 
         
-        if(distanciadoplayer > moveseekplayer.rangemaxlongedoplayer && estadoatual != EstadosdosInimigos.GoingtoPlayer)
+        if(distanciadoplayer > moveseekplayer.range  && estadoatual != EstadosdosInimigos.GoingtoPlayer)
         {
             MudarEstado(EstadosdosInimigos.GoingtoPlayer);
         }
-        else if (distanciadoplayer <= moveseekplayer.rangemaxlongedoplayer && estadoatual != EstadosdosInimigos.Ataque)
+        else if (distanciadoplayer <= moveseekplayer.range  && estadoatual != EstadosdosInimigos.Ataque)
         {
             MudarEstado(EstadosdosInimigos.Ataque);
         }

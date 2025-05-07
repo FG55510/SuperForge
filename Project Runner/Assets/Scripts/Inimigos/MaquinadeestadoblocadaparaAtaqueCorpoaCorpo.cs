@@ -7,11 +7,12 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
     [SerializeField] private EstadosdosInimigos estadoatual;
     [SerializeField] private AtaqueCorpoaCorpoInimigos ataque;
     [SerializeField] private MovimentaçãoInimigosOtimizada move;
-    
+    [SerializeField] private float tempodemovimentoentreataques =3;
+
     [SerializeField] private GameObject player;
     [SerializeField] private float distanciadoplayer;
 
-    public float range;
+    [SerializeField] private float range;
 
     
 
@@ -23,6 +24,7 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
         move = GetComponent<MovimentaçãoInimigosOtimizada>();
         move.DefinirPlayer(player.transform);
         ataque.DeterminaPlayer(player.transform);
+        move.range = range;
     }
 
     // Update is called once per frame
@@ -30,17 +32,17 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
     {
       distanciadoplayer = Vector3.Distance(player.transform.position, transform.position);
 
-        if (ataque.enabled && range< distanciadoplayer)
+        if (estadoatual == EstadosdosInimigos.Ataque && range< distanciadoplayer)
         {
-            ataque.enabled = false;
-            move.enabled = true;
+            MudaEstados(EstadosdosInimigos.GoingtoPlayer);
         }
-        else if (range >= distanciadoplayer && !ataque.enabled)
+        else if (range >= distanciadoplayer && estadoatual == EstadosdosInimigos.GoingtoPlayer)
         {
-            ataque.enabled = true;
-            ataque.IniciaAtaque();
-            move.enabled = false;
-            SoundManager.INSTANCE.PlayEnemyRoboAtack();
+            MudaEstados(EstadosdosInimigos.Ataque);
+        }
+        else if (estadoatual == EstadosdosInimigos.Ataque && ataque.atacou)
+        {
+            MudaEstados(EstadosdosInimigos.MovimentoEntreAtaques);
         }
 
     }
@@ -53,20 +55,31 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
         {
             case EstadosdosInimigos.Ataque:
                 ataque.enabled = true;
-
+                ataque.IniciaAtaque();
+                move.enabled = false;
                 break;
 
             case EstadosdosInimigos.GoingtoPlayer:
                 ataque.enabled = false;
                 move.enabled = true;
+                move.Desativarretirada();
+                break;
+
+            case EstadosdosInimigos.MovimentoEntreAtaques:
+                ataque.enabled = false;
+                move.enabled = true;
+                move.Ativarretirada();
+                StartCoroutine(Movimentoaposataque(tempodemovimentoentreataques));
                 break;
 
         }
+        estadoatual = estado;
     }
 
     IEnumerator Movimentoaposataque(float tempo)
     {
-        yield return null;
+        yield return new WaitForSeconds(tempo);
+        MudaEstados(EstadosdosInimigos.GoingtoPlayer);
     }
     private void ResetEstados()
     {
