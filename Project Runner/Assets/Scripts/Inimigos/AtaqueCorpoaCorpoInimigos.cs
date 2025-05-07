@@ -36,7 +36,6 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
             if (timer <= 0)
             {
                 timer = Duracaodoataque;
-                Debug.Log("Fim de Ataque inimigo");
                 timerativo = false;
                 HitBox.enabled = false;
             }
@@ -46,10 +45,6 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HIt");
-
-        
-
         if (other.CompareTag("Player") )
         {
             GameManager.INSTANCE.PlayerTomaDano.Invoke(dano);

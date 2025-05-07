@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
@@ -40,6 +42,36 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
             move.enabled = false;
             SoundManager.INSTANCE.PlayEnemyRoboAtack();
         }
+
+    }
+
+    private void MudaEstados(EstadosdosInimigos estado)
+    {
+        ResetEstados();
+
+        switch (estado)
+        {
+            case EstadosdosInimigos.Ataque:
+                ataque.enabled = true;
+
+                break;
+
+            case EstadosdosInimigos.GoingtoPlayer:
+                ataque.enabled = false;
+                move.enabled = true;
+                break;
+
+        }
+    }
+
+    IEnumerator Movimentoaposataque(float tempo)
+    {
+        yield return null;
+    }
+    private void ResetEstados()
+    {
+        ataque.enabled = false;
+        move.enabled = false;
 
     }
 }
