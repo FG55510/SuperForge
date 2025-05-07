@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class MaquinadeestadoblocadaparaAtaqueCorpoaCorpo : MonoBehaviour
+public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
 {
+    [SerializeField] private EstadosdosInimigos estadoatual;
     [SerializeField] private AtaqueCorpoaCorpoInimigos ataque;
     [SerializeField] private MovimentaçãoInimigosOtimizada move;
     

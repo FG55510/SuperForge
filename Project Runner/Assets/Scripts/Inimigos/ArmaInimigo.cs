@@ -14,7 +14,11 @@ public class ArmaInimigo : MonoBehaviour
     private LineRenderer laserline;
     private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
 
-    public float timertoshoot;
+    public float timertoshootquick;
+
+    public float timertoshootslow;
+
+    private float timertoshoot;
 
     public float timer;
 
@@ -25,11 +29,12 @@ public class ArmaInimigo : MonoBehaviour
     [SerializeField] private Animator anim;
 
 
-// Start is called once before the first execution of Update after the MonoBehaviour is created
 void Start()
     {
         anim = GetComponent<Animator>();
         laserline = GetComponent<LineRenderer>();
+        timertoshoot = timertoshootquick;
+        timer = timertoshoot;
     }
 
     // Update is called once per frame
@@ -84,6 +89,16 @@ void Start()
     public void DefinirPlayer(Transform target)
     {
         player = target;
+    }
+
+    public void AtiraLento()
+    {
+        timertoshoot = timertoshootslow;
+    }
+
+    public void AtiraRapido()
+    {
+        timertoshoot = timertoshootquick;
     }
 
 }

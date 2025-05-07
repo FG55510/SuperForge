@@ -10,7 +10,7 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
     public float rangeminpertodoplayer;
     public float rangemaxlongedoplayer;
     
-    public bool playernorangemin;
+    public bool retirada;
 
     private Rigidbody rb;
 
@@ -18,6 +18,7 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        retirada = false;
     }
 
 
@@ -27,7 +28,7 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
 
         
 
-        if(!playernorangemin){
+        if(!retirada){
             Vector3 direcao = player.position - transform.position;
         
             distancia = direcao.magnitude;
@@ -68,6 +69,20 @@ public class MovimentaçãoInimigosOtimizada : MonoBehaviour
         
     }
 
+    public void AnimatorIdle()
+    {
+        anim.SetFloat("Speed", 0f);
+    }
+
+    public void Ativarretirada()
+    {
+        retirada = true;
+    }
+
+    public void Desativarretirada()
+    {
+        retirada = false;
+    }
 
     public void DefinirPlayer(Transform alvo)
     {

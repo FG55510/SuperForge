@@ -5,7 +5,8 @@ using Random = UnityEngine.Random;
 public enum EstadosdosInimigos
 {
     Ataque,
-    GoingtoPlayer
+    GoingtoPlayer,
+    Playerperto
 }
 public class EnemyStateManager : MonoBehaviour
 {
@@ -58,12 +59,20 @@ public class EnemyStateManager : MonoBehaviour
         {
             case EstadosdosInimigos.Ataque:
                 Gun.enabled = true;
-                anim.SetFloat("Speed", 0);
+                Gun.AtiraRapido();
                 break;
 
             case EstadosdosInimigos.GoingtoPlayer:
                 moveseekplayer.enabled = true;
                 break;
+
+            case EstadosdosInimigos.Playerperto:
+                moveseekplayer.enabled = true;
+                moveseekplayer.Ativarretirada();
+                Gun.enabled = true;
+                Gun.AtiraLento();
+                break;
+
         }
 
         estadoatual = estado;
