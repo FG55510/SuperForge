@@ -1058,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6715578155336784509, guid: dac9afb8993946243aefaea07adcb38f, type: 3}
+      propertyPath: tempodemovimentoentreataques
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6727883544184594751, guid: dac9afb8993946243aefaea07adcb38f, type: 3}
       propertyPath: m_Layer
       value: 7

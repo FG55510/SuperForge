@@ -57,6 +57,7 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
                 ataque.enabled = true;
                 ataque.IniciaAtaque();
                 move.enabled = false;
+                StartCoroutine(Movimentoaposataque(tempodemovimentoentreataques));
                 break;
 
             case EstadosdosInimigos.GoingtoPlayer:
@@ -69,7 +70,6 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
                 ataque.enabled = false;
                 move.enabled = true;
                 move.Ativarretirada();
-                StartCoroutine(Movimentoaposataque(tempodemovimentoentreataques));
                 break;
 
         }
@@ -78,6 +78,8 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
 
     IEnumerator Movimentoaposataque(float tempo)
     {
+        yield return new WaitForSeconds(1);
+        MudaEstados(EstadosdosInimigos.MovimentoEntreAtaques);
         yield return new WaitForSeconds(tempo);
         MudaEstados(EstadosdosInimigos.GoingtoPlayer);
     }
