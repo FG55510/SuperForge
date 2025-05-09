@@ -37,7 +37,7 @@ public class Katana : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.INSTANCE.PlayerAttack.RemoveListener(HitBoxAtivada);
+        GameManager.INSTANCE.PlayerAttack?.RemoveListener(HitBoxAtivada);
     }
 
 

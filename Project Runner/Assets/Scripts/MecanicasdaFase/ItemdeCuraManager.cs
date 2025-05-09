@@ -22,6 +22,6 @@ public class ItemdeCuraManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.INSTANCE.ItemdeCuraDropado.RemoveListener(SpawnItemdecura);
+        GameManager.INSTANCE.ItemdeCuraDropado?.RemoveListener(SpawnItemdecura);
     }
 }

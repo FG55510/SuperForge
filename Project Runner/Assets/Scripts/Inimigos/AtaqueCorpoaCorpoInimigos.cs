@@ -9,7 +9,6 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
     [SerializeField] private float timer;
     [SerializeField] private int dano;
     [SerializeField] private bool timerativo;
-    public bool atacou = false;
 
     public Transform player;
 
@@ -37,7 +36,6 @@ public class AtaqueCorpoaCorpoInimigos : MonoBehaviour
                 timer = Duracaodoataque;
                 timerativo = false;
                 HitBox.enabled = false;
-                atacou = true;
             }
         }
     }

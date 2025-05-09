@@ -30,7 +30,7 @@ public class Barreira : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.INSTANCE.IniciodaWave.RemoveListener(PrendePlayer);
-        GameManager.INSTANCE.FimdaWave.RemoveListener(PlayerLiberto);
+        GameManager.INSTANCE.IniciodaWave?.RemoveListener(PrendePlayer);
+        GameManager.INSTANCE.FimdaWave?.RemoveListener(PlayerLiberto);
     }
 }

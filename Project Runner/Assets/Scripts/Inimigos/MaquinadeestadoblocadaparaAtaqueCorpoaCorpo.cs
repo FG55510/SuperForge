@@ -8,6 +8,7 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
     [SerializeField] private AtaqueCorpoaCorpoInimigos ataque;
     [SerializeField] private MovimentaçãoInimigosOtimizada move;
     [SerializeField] private float tempodemovimentoentreataques =3;
+    [SerializeField] private float tempodoataque = 3;
 
     [SerializeField] private GameObject player;
     [SerializeField] private float distanciadoplayer;
@@ -40,10 +41,6 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
         {
             MudaEstados(EstadosdosInimigos.Ataque);
         }
-        else if (estadoatual == EstadosdosInimigos.Ataque && ataque.atacou)
-        {
-            MudaEstados(EstadosdosInimigos.MovimentoEntreAtaques);
-        }
 
     }
 
@@ -57,7 +54,7 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
                 ataque.enabled = true;
                 ataque.IniciaAtaque();
                 move.enabled = false;
-                StartCoroutine(Movimentoaposataque(tempodemovimentoentreataques));
+                StartCoroutine(Movimentoaposataque(tempodemovimentoentreataques, tempodoataque));
                 break;
 
             case EstadosdosInimigos.GoingtoPlayer:
@@ -76,11 +73,11 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
         estadoatual = estado;
     }
 
-    IEnumerator Movimentoaposataque(float tempo)
+    IEnumerator Movimentoaposataque(float tempoentreataques, float tempodoataque)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(tempodoataque);
         MudaEstados(EstadosdosInimigos.MovimentoEntreAtaques);
-        yield return new WaitForSeconds(tempo);
+        yield return new WaitForSeconds(tempoentreataques);
         MudaEstados(EstadosdosInimigos.GoingtoPlayer);
     }
     private void ResetEstados()

@@ -56,6 +56,6 @@ public class ObjectPool : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.INSTANCE.FimdaWave.RemoveListener(ResetPool);
+        GameManager.INSTANCE.FimdaWave?.RemoveListener(ResetPool);
     }
 }

@@ -128,6 +128,6 @@ public class SpawnerInimigos : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.INSTANCE.IniciodaWave.RemoveListener(SpawnInimigos);
+        GameManager.INSTANCE.IniciodaWave?.RemoveListener(SpawnInimigos);
     }
 }

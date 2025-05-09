@@ -89,10 +89,10 @@ public class UIManager : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameManager.INSTANCE.PlayerTomaDano.RemoveListener(TiravidaUI);
-        GameManager.INSTANCE.PlayerCuraVida.RemoveListener(SomaVidaUI);
+        GameManager.INSTANCE.PlayerTomaDano?.RemoveListener(TiravidaUI);
+        GameManager.INSTANCE.PlayerCuraVida?.RemoveListener(SomaVidaUI);
 
-        GameManager.INSTANCE.Playermorre.RemoveListener(Lose);
-        GameManager.INSTANCE.PlayerWin.RemoveListener(Win);
+        GameManager.INSTANCE.Playermorre?.RemoveListener(Lose);
+        GameManager.INSTANCE.PlayerWin?.RemoveListener(Win);
     }
 }
