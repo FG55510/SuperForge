@@ -17,6 +17,8 @@ public class PlayerLife : MonoBehaviour
         GameManager.INSTANCE.PlayerTomaDano.AddListener(Tiravida);
         GameManager.INSTANCE.PlayerCuraVida.AddListener(CuraPlayer);
         Vidaescudoatual = Vidaescudomax;
+
+        vidaatual = vidamax;
     }
 
     void Update()

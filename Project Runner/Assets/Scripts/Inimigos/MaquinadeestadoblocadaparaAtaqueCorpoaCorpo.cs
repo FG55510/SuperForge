@@ -8,7 +8,7 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
     [SerializeField] private AtaqueCorpoaCorpoInimigos ataque;
     [SerializeField] private MovimentaçãoInimigosOtimizada move;
     [SerializeField] private float tempodemovimentoentreataques =3;
-    [SerializeField] private float tempodoataque = 3;
+    [SerializeField] private float tempodoataque = 0.5f;
 
     [SerializeField] private GameObject player;
     [SerializeField] private float distanciadoplayer;
@@ -26,6 +26,7 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
         move.DefinirPlayer(player.transform);
         ataque.DeterminaPlayer(player.transform);
         move.range = range;
+        MudaEstados(EstadosdosInimigos.GoingtoPlayer);
     }
 
     // Update is called once per frame
@@ -33,11 +34,7 @@ public class MaquinadeestadoparaAtaqueCorpoaCorpo : MonoBehaviour
     {
       distanciadoplayer = Vector3.Distance(player.transform.position, transform.position);
 
-        if (estadoatual == EstadosdosInimigos.Ataque && range< distanciadoplayer)
-        {
-            MudaEstados(EstadosdosInimigos.GoingtoPlayer);
-        }
-        else if (range >= distanciadoplayer && estadoatual == EstadosdosInimigos.GoingtoPlayer)
+        if (range >= distanciadoplayer && estadoatual == EstadosdosInimigos.GoingtoPlayer)
         {
             MudaEstados(EstadosdosInimigos.Ataque);
         }

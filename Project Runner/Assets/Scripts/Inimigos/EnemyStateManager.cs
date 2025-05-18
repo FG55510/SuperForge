@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,8 +17,8 @@ public class EnemyStateManager : MonoBehaviour
 
     [SerializeField] private GameObject player;
     [SerializeField] private float distanciadoplayer;
-    [SerializeField] private float RangeMaximoparaatirar;
-    [SerializeField] private float RangeMinimoparaatirar;
+    [SerializeField] private float Rangetiro;
+    [SerializeField] private float RangeDangerZone;
 
     [SerializeField] private EstadosdosInimigos estadoatual;
 
@@ -28,6 +29,8 @@ public class EnemyStateManager : MonoBehaviour
     {
         Gun = GetComponent<ArmaInimigo>();
         moveseekplayer = GetComponent< MovimentaçãoInimigosOtimizada> ();
+        moveseekplayer.range = Rangetiro;
+
         anim = GetComponent<Animator>();
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -42,11 +45,15 @@ public class EnemyStateManager : MonoBehaviour
         distanciadoplayer = Vector3.Distance(player.transform.position, transform.position);
 
         
-        if(distanciadoplayer > moveseekplayer.range  && estadoatual != EstadosdosInimigos.GoingtoPlayer)
+        if(distanciadoplayer > Rangetiro  && estadoatual != EstadosdosInimigos.GoingtoPlayer)
         {
-            MudarEstado(EstadosdosInimigos.GoingtoPlayer);
+            MudarEstado(EstadosdosInimigos.GoingtoPlayer );
         }
-        else if (distanciadoplayer <= moveseekplayer.range  && estadoatual != EstadosdosInimigos.Ataque)
+        if(distanciadoplayer < RangeDangerZone && estadoatual != EstadosdosInimigos.Playerperto)
+        {
+            MudarEstado(EstadosdosInimigos.Playerperto);
+        }
+        else if (distanciadoplayer <= Rangetiro  && estadoatual != EstadosdosInimigos.Ataque)
         {
             MudarEstado(EstadosdosInimigos.Ataque);
         }
@@ -61,6 +68,7 @@ public class EnemyStateManager : MonoBehaviour
             case EstadosdosInimigos.Ataque:
                 Gun.enabled = true;
                 Gun.AtiraRapido();
+
                 break;
 
             case EstadosdosInimigos.GoingtoPlayer:
@@ -78,6 +86,11 @@ public class EnemyStateManager : MonoBehaviour
 
         estadoatual = estado;
             
+    }
+
+    IEnumerator PlayerPerto()
+    {
+        yield return null;
     }
 
     private void ResetEstados()

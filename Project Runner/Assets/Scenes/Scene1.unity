@@ -9280,6 +9280,7 @@ GameObject:
   - component: {fileID: 1441500208}
   - component: {fileID: 1441500209}
   - component: {fileID: 1441500210}
+  - component: {fileID: 1441500211}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -9400,6 +9401,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1179903124}
+--- !u!114 &1441500211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441500204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84bfe76da949d64a9ca90bc95051135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: 1441500208}
+  attack: {fileID: 1241646642}
 --- !u!1 &1447937050
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,20 +46,25 @@ void Start()
         Vector3 Direction = (player.position - transform.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(Direction);
         transform.rotation = rotation;
+
+        Vector3 Directionshoot = arma.forward;
         if (timer <= 0)
         {
             
 
+            
+
+            
             RaycastHit hit;
 
             StartCoroutine(ShotEffect());
 
 
             laserline.SetPosition(0, arma.position);
-            if (Physics.Raycast(arma.position, Direction, out hit, 1000f, LayerPlayer))
+            if (Physics.Raycast(arma.position, Directionshoot, out hit, 1000f, LayerPlayer))
             {
                 laserline.SetPosition(1, hit.point);
-                Debug.DrawRay(arma.position, Direction * 1000f, Color.red);
+                Debug.DrawRay(arma.position, Directionshoot * 1000f, Color.red);
                   GameManager.INSTANCE.PlayerTomaDano.Invoke(dano);
                 anim.SetTrigger("Shoot");
 
@@ -86,6 +91,14 @@ void Start()
 
         laserline.enabled = false;
     }
+
+    private void shoot()
+    {
+
+    }
+
+
+    
     public void DefinirPlayer(Transform target)
     {
         player = target;
